@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './login/login.component';
-import { NewsComponent } from './news/news.component';
-import { ProfileComponent } from './profile/profile.component';
-import { RostersComponent } from './rosters/rosters.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { HeaderComponent } from './main/header/header.component';
+import { LoginComponent } from './main/login/login.component';
+import { NewsComponent } from './main/news/news.component';
+import { ProfileComponent } from './main/profile/profile.component';
+import { RostersComponent } from './main/rosters/rosters.component';
+import { ScheduleComponent } from './main/schedule/schedule.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ScoresComponent } from './scores/scores.component';
+import { ScoresComponent } from './main/scores/scores.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ScoresComponent } from './scores/scores.component';
     ProfileComponent,
     RostersComponent,
     ScheduleComponent,
-    ScoresComponent
+    ScoresComponent,
   ],
   imports: [
     BrowserModule,

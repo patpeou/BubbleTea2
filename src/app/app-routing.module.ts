@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RostersComponent } from './rosters/rosters.component';
-import { ScheduleComponent } from './schedule/schedule.component';
-import { LoginComponent } from './login/login.component'
-import { ProfileComponent } from './profile/profile.component';
-import { NewsComponent } from './news/news.component';
-import { ScoresComponent } from "./scores/scores.component";
+import { RostersComponent } from './main/rosters/rosters.component';
+import { ScheduleComponent } from './main/schedule/schedule.component';
+import { LoginComponent } from './main/login/login.component'
+import { ProfileComponent } from './main/profile/profile.component';
+import { NewsComponent } from './main/news/news.component';
+import { ScoresComponent } from "./main/scores/scores.component";
 
 const routes: Routes = [
   {

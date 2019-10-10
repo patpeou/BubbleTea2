@@ -1,10 +1,13 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
 
 const mongoose = require('mongoose');
+const User = require('./models/User');
+const bodyParser = require('body-parser');
+
+
+const express = require('express');
 const app = express();
 
+// ------------------------------------MONGODB -------------------------------------------
 mongoose.connect("mongodb+srv://sopa:Megaman69!@cluster0-spcvx.mongodb.net/test?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true })
   .then( () => {
@@ -13,10 +16,22 @@ mongoose.connect("mongodb+srv://sopa:Megaman69!@cluster0-spcvx.mongodb.net/test?
   console.log('Connection Failed!');
 });
 
+const newUser  = new User({
+  firstName: 'Soup',
+  lastName: 'Peou',
+  isActive: 1
+});
+
+newUser.save();
+
+// ------------------------------------ END MONGODB ----------------------------------------------------------
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
+
 
 app.use((req, res, next)=>{
   res.setHeader("Access-Control-Allow-Origin","*");

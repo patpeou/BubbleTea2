@@ -2,6 +2,8 @@ const app = require("./backend/app");
 const debug = require("debug")("node-angular");
 const http = require("http");
 
+
+
 const normalizePort = val => {
   console.log(val);
   var port = parseInt(val, 10);
@@ -51,6 +53,8 @@ const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);
+
+
 
 
 // const url = 'https://jsonplaceholder.typicode.com/posts';
