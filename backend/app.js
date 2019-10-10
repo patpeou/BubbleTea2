@@ -22,7 +22,13 @@ const newUser  = new User({
   isActive: 1
 });
 
-newUser.save();
+newUser.save((err, dataSaved) => {
+  if(err){
+    return err;
+  }
+  console.log(dataSaved);
+
+});
 
 // ------------------------------------ END MONGODB ----------------------------------------------------------
 
