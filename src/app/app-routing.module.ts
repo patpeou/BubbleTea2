@@ -4,7 +4,7 @@ import { RostersComponent } from './main/rosters/rosters.component';
 import { ScheduleComponent } from './main/schedule/schedule.component';
 import { LoginComponent } from './main/login/login.component'
 import { ProfileComponent } from './main/profile/profile.component';
-import { NewsComponent } from './main/news/news.component';
+import { NewsComponent } from './main/posts/news/news.component';
 import { ScoresComponent } from "./main/scores/scores.component";
 
 const routes: Routes = [

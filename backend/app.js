@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('./models/User');
+const Blog = require('./models/Blog');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -26,7 +27,7 @@ app.use((req, res, next)=>{
 
 // ------------------------------------MONGODB -------------------------------------------
 
-mongoose.connect("mongodb+srv://sopa:Megaman69!@cluster0-spcvx.mongodb.net/login?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://sopa:Megaman69!@cluster0-spcvx.mongodb.net/blog?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true })
   .then( () => {
     console.log('Connected to database!');
@@ -92,6 +93,12 @@ app.get('/users', (req,res)=>{
   });
 });
 
+app.get('/blogs', (req,res)=>{
+  Blog.find({}).then( entry => {
+    res.send(entry);
+  })
+});
+
 app.put('/users/:id',(req, res) => {
   const id = req.params.id;
   const firstName = req.body.firstName;
@@ -118,9 +125,9 @@ app.delete('/users/:id',(req, res) =>{
 });
 
 app.listen(4500, () => {
-  console.log(`
-    listening on port 4500
-  `)
+  // console.log(`
+  //   listening on port 4500
+  // `)
 });
 module.exports = app;
 
